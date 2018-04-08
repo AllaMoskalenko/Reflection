@@ -4,17 +4,18 @@ import java.util.ArrayList;
 
 public class Student extends Human implements Swiming {
 
+    @Deprecated
     private String highSchoolName;
     private int learningYear;
     private ArrayList<String> lessons = new ArrayList<String>();
 
-    public Student(String name, int age, String highSchoolName, int learningYear) {
+    private Student(String name, int age, String highSchoolName, int learningYear) {
         super(name, age);
         this.highSchoolName = highSchoolName;
         this.learningYear = learningYear;
     }
 
-    public String getHighSchoolName() {
+    private String getHighSchoolName() {
         return highSchoolName;
     }
 
@@ -22,7 +23,7 @@ public class Student extends Human implements Swiming {
         this.highSchoolName = highSchoolName;
     }
 
-    public int getLearningYear() {
+    private int getLearningYear() {
         return learningYear;
     }
 
@@ -51,6 +52,8 @@ public class Student extends Human implements Swiming {
     }
 
 
+
+/*
     public static void main(String[] args) {
         Student student = new Student("Ivanov Ivan", 16, "Institute of Physical Education", 2 );
 
@@ -60,6 +63,5 @@ public class Student extends Human implements Swiming {
 
         System.out.println(student);
     }
-
-
+*/
 }
