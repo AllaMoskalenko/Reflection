@@ -16,7 +16,6 @@ public class Ref {
     }
 
 
-
         public static void baseInfo (String nameClass) throws ClassNotFoundException {
 
             Class class1 = Class.forName(nameClass);
@@ -46,7 +45,7 @@ public class Ref {
             Class class1 = Class.forName(nameClass);
             System.out.println("");
             System.out.println("Annotations: ");
-            Method[] meth = class1.getMethods();
+            Method[] meth = class1.getDeclaredMethods();
             for (Method metod : meth) {
                 Annotation[] annotations = metod.getAnnotations();
                 for (Annotation a : annotations) {
@@ -83,7 +82,7 @@ public class Ref {
 
             System.out.println("");
             System.out.println("Methods:");
-            Method[] methods = class1.getMethods();
+            Method[] methods = class1.getDeclaredMethods();
             for (Method met : methods) {
                 System.out.print(Modifier.toString(met.getModifiers()) + " ");
                 System.out.print(met.getReturnType().getName() + " ");
