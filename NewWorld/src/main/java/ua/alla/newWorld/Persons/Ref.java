@@ -6,22 +6,20 @@ import java.lang.reflect.*;
 public class Ref {
     public static void main(String[] args)  throws Exception {
 
-        Student student = new Student("Ivanoff", 18);
-
-        baseInfo(student);
-        interfaceInfo(student);
-        annotationInfo(student);
-        fieldsInfo(student);
-        methodsInfo(student);
-        constructorInfo(student);
+        baseInfo("ua.alla.newWorld.Persons.Student");
+        interfaceInfo("ua.alla.newWorld.Persons.Student");
+        annotationInfo("ua.alla.newWorld.Persons.Student");
+        fieldsInfo("ua.alla.newWorld.Persons.Student");
+        methodsInfo("ua.alla.newWorld.Persons.Student");
+        constructorInfo("ua.alla.newWorld.Persons.Student");
 
     }
 
 
 
-        public static void baseInfo (Object object){
+        public static void baseInfo (String nameClass) throws ClassNotFoundException {
 
-            Class class1 = object.getClass();
+            Class class1 = Class.forName(nameClass);
 
             System.out.println("Class name: " + class1.getName());
 
@@ -32,9 +30,9 @@ public class Ref {
             System.out.println("Modifier: " + Modifier.toString(class1.getModifiers()));
         }
 
-        public static void interfaceInfo (Object object) {
+        public static void interfaceInfo (String nameClass) throws ClassNotFoundException {
 
-            Class class1 = object.getClass();
+            Class class1 = Class.forName(nameClass);
 
             System.out.print("Interfaces: ");
             Class[] interfaces = class1.getInterfaces();
@@ -43,9 +41,9 @@ public class Ref {
             }
         }
 
-        public static void annotationInfo(Object object) {
+        public static void annotationInfo(String nameClass) throws ClassNotFoundException {
 
-            Class class1 = object.getClass();
+            Class class1 = Class.forName(nameClass);
             System.out.println("");
             System.out.println("Annotations: ");
             Method[] meth = class1.getMethods();
@@ -66,9 +64,9 @@ public class Ref {
 
         }
 
-        public static void fieldsInfo (Object object) {
+        public static void fieldsInfo (String nameClass) throws ClassNotFoundException {
 
-            Class class1 = object.getClass();
+            Class class1 = Class.forName(nameClass);
             System.out.println("");
             System.out.println("Fields: ");
             Field[] fields = class1.getDeclaredFields();
@@ -79,9 +77,9 @@ public class Ref {
             }
         }
 
-        public static void methodsInfo(Object object) {
+        public static void methodsInfo(String nameClass) throws ClassNotFoundException {
 
-            Class class1 = object.getClass();
+            Class class1 = Class.forName(nameClass);
 
             System.out.println("");
             System.out.println("Methods:");
@@ -94,9 +92,9 @@ public class Ref {
         }
 
 
-        public static void constructorInfo (Object object){
+        public static void constructorInfo (String nameClass) throws ClassNotFoundException {
 
-            Class class1 = object.getClass();
+            Class class1 = Class.forName(nameClass);
             System.out.println("");
             System.out.println("Constructors: ");
             Constructor[] constr = class1.getDeclaredConstructors();
