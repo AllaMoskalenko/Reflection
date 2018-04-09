@@ -6,13 +6,19 @@ public class Student extends Human implements Swiming {
 
     @Deprecated
     private String highSchoolName;
+
     private int learningYear;
+
     private ArrayList<String> lessons = new ArrayList<String>();
 
     private Student(String name, int age, String highSchoolName, int learningYear) {
         super(name, age);
         this.highSchoolName = highSchoolName;
         this.learningYear = learningYear;
+    }
+
+    public Student(String name, int age) {
+        super(name, age);
     }
 
     private String getHighSchoolName() {
