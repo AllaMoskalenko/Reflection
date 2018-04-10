@@ -1,11 +1,17 @@
 package ua.alla.ClassCheck;
 
+import org.omg.Dynamic.Parameter;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
 
 public class ReflClassCheck {
     public static void main(String[] args) throws Exception{
-    ReflectionInfo("java.util.ArrayList");
+
+        ReflectionInfo("java.util.ArrayList");
+        //ReflectionInfo("java.util.Collections");
+        //ReflectionInfo("java.lang.String");
+
     }
 
 
@@ -67,6 +73,13 @@ public class ReflClassCheck {
         Constructor[] constr = class1.getDeclaredConstructors();
         for (Constructor constructor : constr) {
             System.out.println(constructor);
+        }
+
+        System.out.println("");
+        System.out.println("Parameters: ");
+        TypeVariable[] parameters = class1.getTypeParameters();
+        for (TypeVariable param : parameters) {
+            System.out.println(param.getName());
         }
 
     }
