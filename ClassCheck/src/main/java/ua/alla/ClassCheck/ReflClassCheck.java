@@ -1,7 +1,5 @@
 package ua.alla.ClassCheck;
 
-import org.omg.Dynamic.Parameter;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
 
@@ -15,7 +13,7 @@ public class ReflClassCheck {
     }
 
 
-    public static void ReflectionInfo (String className) throws ClassNotFoundException{
+    public static void ReflectionInfo (String className) throws Exception{
         Class class1 = Class.forName(className);
 
         System.out.println("Class name: " + class1.getName());
@@ -82,5 +80,22 @@ public class ReflClassCheck {
             System.out.println(param.getName());
         }
 
-    }
+        System.out.println("");
+        System.out.println("Hierarhy:");
+        FoundParent(className);
+
+        }
+
+        private static void FoundParent(String nameChild) throws Exception{
+
+        Class child = Class.forName(nameChild);
+        Class parent = child.getSuperclass();
+            if (parent.getName().equals("java.lang.Object")) {
+                System.out.println(parent.getName());
+                return;}
+            else {System.out.println(parent.getName());
+                    FoundParent(parent.getName());}
+
+        }
+
 }
